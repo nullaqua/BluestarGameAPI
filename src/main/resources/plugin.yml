@@ -1,0 +1,4 @@
+name: BluestarGameAPI
+version: '${project.version}'
+main: me.lanzhi.bluestargameapi.BluestarGameAPI
+api-version: 1.18
