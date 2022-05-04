@@ -35,5 +35,5 @@ public interface BluestarGamePluginInterface
 
     SimpleDateFormat getBluestarDateFormat();
 
-    BluestarGameManagerInterface getPlugin();
+    BluestarGamePluginInterface getPlugin();
 }
