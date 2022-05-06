@@ -65,4 +65,8 @@ public interface RandomEventMangerInterface
     public boolean respawn();
 
     public void respawn(boolean b);
+
+    public boolean oneHealth();
+
+    public void oneHealth(boolean b);
 }
