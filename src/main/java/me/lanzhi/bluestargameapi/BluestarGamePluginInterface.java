@@ -29,6 +29,8 @@ public interface BluestarGamePluginInterface
 
     YamlFile getPlayerMap();
 
+    YamlFile getLang();
+
     BluestarGameManagerInterface getBluestarGameManager();
 
     NumberFormat getBluestarNF();
@@ -36,4 +38,6 @@ public interface BluestarGamePluginInterface
     SimpleDateFormat getBluestarDateFormat();
 
     BluestarGamePluginInterface getPlugin();
+
+    boolean isEnable();
 }
