@@ -6,7 +6,7 @@
 
     <groupId>me.lanzhi</groupId>
     <artifactId>BluestarGameAPI</artifactId>
-    <version>3.2</version>
+    <version>3.2.1</version>
     <packaging>jar</packaging>
 
     <name>BluestarGameAPI</name>
@@ -82,7 +82,7 @@
         <dependency>
             <groupId>com.github.lanzhi6</groupId>
             <artifactId>BluestarAPI</artifactId>
-            <version>2.0.0-rc9</version>
+            <version>2.4.0-pre1</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
