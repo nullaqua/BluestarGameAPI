@@ -1,6 +1,6 @@
 package me.lanzhi.bluestargameapi.managers;
 
-import de.tr7zw.nbtapi.NBTItem;
+import me.lanzhi.api.nbt.*;
 
 public interface SuperSpongeManagerInterface
 {

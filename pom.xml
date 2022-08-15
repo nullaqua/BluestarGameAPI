@@ -6,7 +6,7 @@
 
     <groupId>me.lanzhi</groupId>
     <artifactId>BluestarGameAPI</artifactId>
-    <version>3.4</version>
+    <version>3.4.1</version>
     <packaging>jar</packaging>
 
     <name>BluestarGameAPI</name>
@@ -96,15 +96,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>de.tr7zw</groupId>
-            <artifactId>item-nbt-api-plugin</artifactId>
-            <version>2.9.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>com.github.lanzhi6</groupId>
             <artifactId>BluestarTpsControlAPI</artifactId>
-            <version>1.7</version>
+            <version>3.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
