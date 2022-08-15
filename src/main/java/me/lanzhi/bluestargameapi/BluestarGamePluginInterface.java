@@ -1,6 +1,6 @@
 package me.lanzhi.bluestargameapi;
 
-import me.lanzhi.bluestarapi.api.config.YamlFile;
+import me.lanzhi.api.config.YamlFile;
 import me.lanzhi.bluestargameapi.managers.BluestarGameManagerInterface;
 
 import java.io.File;
