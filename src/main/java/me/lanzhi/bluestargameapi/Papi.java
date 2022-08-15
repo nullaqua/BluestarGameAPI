@@ -2,17 +2,27 @@ package me.lanzhi.bluestargameapi;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import me.lanzhi.bluestartpscontrol.BluestarTpsControlAPI;
-import net.minecraft.server.MinecraftServer;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.lang.reflect.Field;
+
 public class Papi extends PlaceholderExpansion
 {
+    private Field field;
     public Papi()
     {
         this.register();
+        try
+        {
+            field=Bukkit.getServer().getClass().getDeclaredField("recentTps");
+        }
+        catch (NoSuchFieldException e)
+        {
+            throw new AssertionError(e);
+        }
     }
 
     @Override
@@ -55,9 +65,9 @@ public class Papi extends PlaceholderExpansion
     {
         if (params==null||params.isEmpty())
         {
-            BluestarTpsControlAPI bluestarTpsControlAPI=Bukkit.getServicesManager().load(BluestarTpsControlAPI.class);
-            return bluestarTpsControlAPI==null?"null":bluestarTpsControlAPI.tpsFormat(
-                    MinecraftServer.getServer().recentTps[0]);
+            BluestarTpsControlAPI tpsControlAPI=Bukkit.getServicesManager().load(BluestarTpsControlAPI.class);
+            return tpsControlAPI==null?"null":tpsControlAPI.tpsFormat(
+                    Bukkit.getServer().getTPS()[0]);
         }
         switch (params)
         {
@@ -126,7 +136,7 @@ public class Papi extends PlaceholderExpansion
                 BluestarTpsControlAPI bluestarTpsControlAPI=Bukkit.getServicesManager().load(
                         BluestarTpsControlAPI.class);
                 return bluestarTpsControlAPI==null?"null":bluestarTpsControlAPI.tpsFormat(
-                        MinecraftServer.getServer().recentTps[0]);
+                        Bukkit.getServer().getTPS()[0]);
             }
         }
     }
