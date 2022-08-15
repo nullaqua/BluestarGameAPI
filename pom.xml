@@ -6,13 +6,13 @@
 
     <groupId>me.lanzhi</groupId>
     <artifactId>BluestarGameAPI</artifactId>
-    <version>3.4.2</version>
+    <version>3.4.3</version>
     <packaging>jar</packaging>
 
     <name>BluestarGameAPI</name>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
