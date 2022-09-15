@@ -7,22 +7,11 @@ import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.lang.reflect.Field;
-
 public class Papi extends PlaceholderExpansion
 {
-    private Field field;
     public Papi()
     {
         this.register();
-        try
-        {
-            field=Bukkit.getServer().getClass().getDeclaredField("recentTps");
-        }
-        catch (NoSuchFieldException e)
-        {
-            throw new AssertionError(e);
-        }
     }
 
     @Override
@@ -73,8 +62,8 @@ public class Papi extends PlaceholderExpansion
         {
             case "save":
             {
-                final BluestarGamePluginInterface plugin=Bukkit.getServicesManager().load(
-                        BluestarGamePluginInterface.class);
+                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(
+                        IBluestarGamePlugin.class);
                 if (plugin==null)
                 {
                     return "null";
@@ -88,8 +77,8 @@ public class Papi extends PlaceholderExpansion
             }
             case "canGet":
             {
-                final BluestarGamePluginInterface plugin=Bukkit.getServicesManager().load(
-                        BluestarGamePluginInterface.class);
+                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(
+                        IBluestarGamePlugin.class);
                 if (plugin==null)
                 {
                     return "null";
@@ -103,8 +92,8 @@ public class Papi extends PlaceholderExpansion
             }
             case "borrow":
             {
-                final BluestarGamePluginInterface plugin=Bukkit.getServicesManager().load(
-                        BluestarGamePluginInterface.class);
+                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(
+                        IBluestarGamePlugin.class);
                 if (plugin==null)
                 {
                     return "null";
@@ -118,8 +107,8 @@ public class Papi extends PlaceholderExpansion
             }
             case "shouldRepay":
             {
-                final BluestarGamePluginInterface plugin=Bukkit.getServicesManager().load(
-                        BluestarGamePluginInterface.class);
+                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(
+                        IBluestarGamePlugin.class);
                 if (plugin==null)
                 {
                     return "null";

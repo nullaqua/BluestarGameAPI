@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Date;
 import java.util.UUID;
 
-public interface XiaoMoBankInterface
+public interface IXiaoMoBank
 {
     public long getBorrow(@NotNull OfflinePlayer player);
 

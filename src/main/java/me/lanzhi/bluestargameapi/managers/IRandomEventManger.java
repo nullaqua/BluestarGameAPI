@@ -1,11 +1,6 @@
 package me.lanzhi.bluestargameapi.managers;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-
-import java.util.Arrays;
-
-public interface RandomEventMangerInterface
+public interface IRandomEventManger
 {
 
     public void runAuto(boolean b);

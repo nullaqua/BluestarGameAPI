@@ -2,7 +2,7 @@ package me.lanzhi.bluestargameapi.managers;
 
 import me.lanzhi.api.nbt.*;
 
-public interface SuperSpongeManagerInterface
+public interface ISuperSpongeManager
 {
 
     public NBTItem getWaterSponge();
