@@ -6,7 +6,7 @@
 
     <groupId>me.lanzhi</groupId>
     <artifactId>BluestarGameAPI</artifactId>
-    <version>3.5.0</version>
+    <version>3.5.1</version>
     <packaging>jar</packaging>
 
     <name>BluestarGameAPI</name>
@@ -14,6 +14,7 @@
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <github.global.server>github</github.global.server>
     </properties>
 
     <build>
@@ -135,7 +136,7 @@
         <dependency>
             <groupId>me.lanzhi</groupId>
             <artifactId>BluestarAPI-injector</artifactId>
-            <version>3.1.0</version>
+            <version>3.1.6</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
