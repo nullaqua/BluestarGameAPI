@@ -6,7 +6,7 @@
 
     <groupId>me.lanzhi</groupId>
     <artifactId>BluestarGameAPI</artifactId>
-    <version>3.5.2</version>
+    <version>3.5.3</version>
     <packaging>jar</packaging>
 
     <name>BluestarGameAPI</name>
@@ -135,8 +135,8 @@
         </dependency>
         <dependency>
             <groupId>me.lanzhi</groupId>
-            <artifactId>BluestarAPI-injector</artifactId>
-            <version>3.2.0</version>
+            <artifactId>BluestarAPI-Bukkit-injector</artifactId>
+            <version>3.3.2</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>

@@ -1,6 +1,7 @@
 package me.lanzhi.bluestargameapi;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import me.lanzhi.api.util.collection.FastLinkedList;
 import me.lanzhi.bluestartpscontrol.BluestarTpsControlAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
@@ -60,10 +61,9 @@ public class Papi extends PlaceholderExpansion
         }
         switch (params)
         {
-            case "save":
+            case "save" ->
             {
-                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(
-                        IBluestarGamePlugin.class);
+                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(IBluestarGamePlugin.class);
                 if (plugin==null)
                 {
                     return "null";
@@ -72,13 +72,12 @@ public class Papi extends PlaceholderExpansion
                 {
                     return "null";
                 }
-                return plugin.getNumberFormat().format(
-                        plugin.getBluestarGameManager().getApi().getXiaoMoBank().getSave(player));
+                return plugin.getNumberFormat()
+                             .format(plugin.getBluestarGameManager().getApi().getXiaoMoBank().getSave(player));
             }
-            case "canGet":
+            case "canGet" ->
             {
-                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(
-                        IBluestarGamePlugin.class);
+                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(IBluestarGamePlugin.class);
                 if (plugin==null)
                 {
                     return "null";
@@ -87,13 +86,12 @@ public class Papi extends PlaceholderExpansion
                 {
                     return "null";
                 }
-                return plugin.getNumberFormat().format(
-                        plugin.getBluestarGameManager().getApi().getXiaoMoBank().getShoutGet(player));
+                return plugin.getNumberFormat()
+                             .format(plugin.getBluestarGameManager().getApi().getXiaoMoBank().getShoutGet(player));
             }
-            case "borrow":
+            case "borrow" ->
             {
-                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(
-                        IBluestarGamePlugin.class);
+                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(IBluestarGamePlugin.class);
                 if (plugin==null)
                 {
                     return "null";
@@ -102,13 +100,12 @@ public class Papi extends PlaceholderExpansion
                 {
                     return "null";
                 }
-                return plugin.getNumberFormat().format(
-                        plugin.getBluestarGameManager().getApi().getXiaoMoBank().getBorrow(player));
+                return plugin.getNumberFormat()
+                             .format(plugin.getBluestarGameManager().getApi().getXiaoMoBank().getBorrow(player));
             }
-            case "shouldRepay":
+            case "shouldRepay" ->
             {
-                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(
-                        IBluestarGamePlugin.class);
+                final IBluestarGamePlugin plugin=Bukkit.getServicesManager().load(IBluestarGamePlugin.class);
                 if (plugin==null)
                 {
                     return "null";
@@ -117,15 +114,27 @@ public class Papi extends PlaceholderExpansion
                 {
                     return "null";
                 }
-                return plugin.getNumberFormat().format(
-                        plugin.getBluestarGameManager().getApi().getXiaoMoBank().getShoutRepay(player));
+                return plugin.getNumberFormat()
+                             .format(plugin.getBluestarGameManager().getApi().getXiaoMoBank().getShoutRepay(player));
             }
-            default:
+            case "online_list"->
             {
-                BluestarTpsControlAPI bluestarTpsControlAPI=Bukkit.getServicesManager().load(
-                        BluestarTpsControlAPI.class);
-                return bluestarTpsControlAPI==null?"null":bluestarTpsControlAPI.tpsFormat(
-                        Bukkit.getServer().getTPS()[0]);
+                var list=new FastLinkedList<String>();
+                for (var x:Bukkit.getOfflinePlayers())
+                {
+                    if (x.isOnline())
+                    {
+                        list.add(x.getName());
+                    }
+                }
+                return String.join(",",list);
+            }
+            default ->
+            {
+                BluestarTpsControlAPI bluestarTpsControlAPI=Bukkit.getServicesManager()
+                                                                  .load(BluestarTpsControlAPI.class);
+                return bluestarTpsControlAPI==null?"null":bluestarTpsControlAPI.tpsFormat(Bukkit.getServer()
+                                                                                                .getTPS()[0]);
             }
         }
     }
